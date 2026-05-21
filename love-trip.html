@@ -1,0 +1,1471 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<title>Love Trip · Havaj 2027 ♥</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- WhatsApp / Social preview -->
+<meta property="og:title" content="Love Trip · Havaj 2027 ♥">
+<meta property="og:description" content="Moniko, lásko — 20 dní, 4 ostrovy, jeden Pacifik. A já a ty uprostřed všeho. Otevři si naši cestu.">
+<meta property="og:image" content="./img/kauai-napali.jpg">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="cs_CZ">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#C44569">
+<style>
+  :root {
+    --primary: #1F4E78;
+    --accent: #E67E22;
+    --gold: #F39C12;
+    --sea: #16A085;
+    --bg: #FBFAF7;
+    --card: #FFFFFF;
+    --text: #2C3E50;
+    --muted: #7F8C8D;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  /* Hero */
+  .hero {
+    min-height: 100vh;
+    background:
+      radial-gradient(ellipse at 15% 20%, rgba(255,170,140,0.55), transparent 50%),
+      radial-gradient(ellipse at 85% 80%, rgba(22,160,133,0.45), transparent 50%),
+      linear-gradient(160deg, #1A0F2E 0%, #4A1B47 25%, #8B2D5C 45%, #C44569 65%, #E67E50 85%, #F8C471 100%);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 24px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "M ♥ J";
+    position: absolute;
+    top: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: "Brush Script MT", "Lucida Handwriting", cursive;
+    font-size: 26px;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 3px;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  }
+  .hero-intro {
+    font-family: "Brush Script MT", "Lucida Handwriting", cursive;
+    font-size: clamp(20px, 2.4vw, 28px);
+    color: #FFD7C2;
+    margin-bottom: 14px;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  }
+  .hero h1 {
+    font-size: clamp(40px, 6.5vw, 76px);
+    font-weight: 800;
+    letter-spacing: -2px;
+    text-shadow: 0 4px 24px rgba(0,0,0,0.4);
+    margin-bottom: 18px;
+    line-height: 1.05;
+    max-width: 900px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: #FFD7C2;
+    font-weight: 800;
+  }
+  .hero .tagline {
+    font-size: clamp(16px, 1.8vw, 20px);
+    opacity: 0.95;
+    max-width: 640px;
+    margin-bottom: 36px;
+    font-weight: 300;
+    line-height: 1.6;
+  }
+  .hero .tagline .small {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.85em;
+    font-style: italic;
+    opacity: 0.85;
+  }
+
+  /* Couple photos in hero */
+  .hero-couple {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin: 18px 0 38px;
+    flex-wrap: nowrap;
+  }
+  .hero-couple .portrait {
+    width: clamp(110px, 14vw, 160px);
+    height: clamp(110px, 14vw, 160px);
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid rgba(255,255,255,0.85);
+    box-shadow: 0 12px 36px rgba(0,0,0,0.35);
+    position: relative;
+    flex-shrink: 0;
+  }
+  .hero-couple .portrait img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+  }
+  .hero-couple .portrait.rotated img {
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+  .hero-couple .portrait .name-tag {
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255,255,255,0.95);
+    color: #C44569;
+    padding: 3px 14px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    white-space: nowrap;
+  }
+  .hero-couple .amp {
+    font-family: "Brush Script MT", "Lucida Handwriting", cursive;
+    font-size: clamp(48px, 6vw, 76px);
+    color: #FFD7C2;
+    text-shadow: 0 4px 18px rgba(0,0,0,0.4);
+    line-height: 1;
+  }
+
+  /* Countdown */
+  .countdown {
+    margin-top: 8px;
+    text-align: center;
+    color: #fff;
+  }
+  .countdown .cd-label {
+    display: block;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.85;
+    margin-bottom: 14px;
+  }
+  .countdown .cd-grid {
+    display: inline-flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .countdown .cd-box {
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 12px;
+    padding: 12px 16px;
+    min-width: 72px;
+  }
+  .countdown .cd-num {
+    display: block;
+    font-size: 28px;
+    font-weight: 800;
+    color: #FFD7C2;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+  .countdown .cd-u {
+    display: block;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.85;
+    margin-top: 6px;
+  }
+
+  /* Stats moved to dedicated band below hero */
+  .stats-band {
+    background: linear-gradient(180deg, #1A0F2E 0%, #2C1B3D 100%);
+    padding: 40px 5vw;
+    color: white;
+  }
+  .stats-band .stats {
+    display: flex;
+    gap: clamp(20px, 5vw, 60px);
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .stats-band .stat {
+    text-align: center;
+    min-width: 100px;
+  }
+  .stats-band .stat .num {
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 800;
+    color: var(--gold);
+    display: block;
+    line-height: 1;
+  }
+  .stats-band .stat .label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.85;
+    margin-top: 8px;
+    display: block;
+  }
+
+  @media (max-width: 520px) {
+    .hero { padding: 64px 18px 48px; }
+    .hero-couple { gap: 10px; margin: 14px 0 30px; }
+    .countdown .cd-box { padding: 10px 12px; min-width: 60px; }
+    .countdown .cd-num { font-size: 22px; }
+  }
+
+  /* Sections */
+  section {
+    padding: 80px 5vw;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  section h2 {
+    font-size: clamp(28px, 4vw, 44px);
+    color: var(--primary);
+    margin-bottom: 12px;
+    font-weight: 700;
+  }
+  section .subtitle {
+    color: var(--muted);
+    font-size: 17px;
+    margin-bottom: 40px;
+    max-width: 700px;
+  }
+
+  /* Route map */
+  .route-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin: 30px 0;
+  }
+  .pill {
+    background: var(--card);
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    padding: 10px 18px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 15px;
+  }
+  .pill.hawaii { border-color: var(--sea); color: var(--sea); }
+  .pill.flight { background: var(--primary); color: white; font-size: 13px; }
+  .arrow { color: var(--accent); font-weight: bold; }
+
+  /* Cards grid */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    gap: 28px;
+    margin-top: 40px;
+  }
+  .card {
+    background: var(--card);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 36px rgba(0,0,0,0.12);
+  }
+  .card .body {
+    padding: 24px;
+  }
+  .card h3 {
+    color: var(--primary);
+    margin-bottom: 8px;
+    font-size: 22px;
+  }
+  .card .place {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+  .card p { font-size: 15px; color: #34495E; }
+  .card ul {
+    list-style: none;
+    margin-top: 14px;
+    padding-left: 0;
+  }
+  .card ul li {
+    padding: 4px 0;
+    font-size: 14px;
+    color: #555;
+  }
+  .card ul li::before {
+    content: "• ";
+    color: var(--accent);
+    font-weight: bold;
+  }
+  .card .links {
+    margin-top: 16px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .card .links a {
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .card .links a.alt { background: var(--sea); }
+  .card .links a:hover { opacity: 0.85; }
+
+  /* Timeline */
+  .timeline {
+    margin-top: 40px;
+    position: relative;
+    padding-left: 30px;
+    border-left: 3px solid var(--accent);
+  }
+  .day {
+    position: relative;
+    padding-bottom: 28px;
+    padding-left: 20px;
+  }
+  .day::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    background: var(--accent);
+    border-radius: 50%;
+    position: absolute;
+    left: -30px;
+    top: 2px;
+    border: 3px solid var(--bg);
+  }
+  .day .h {
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 4px;
+    font-size: 17px;
+  }
+  .day .h .num {
+    background: var(--primary);
+    color: white;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 13px;
+    margin-right: 8px;
+  }
+  .day p { color: #555; font-size: 15px; }
+  .day .meta { color: var(--muted); font-size: 13px; margin-top: 4px; }
+
+  /* Budget */
+  .budget-box {
+    background: linear-gradient(135deg, var(--primary), #2C7BB6);
+    color: white;
+    border-radius: 20px;
+    padding: 50px;
+    margin-top: 40px;
+    box-shadow: 0 10px 40px rgba(31,78,120,0.25);
+  }
+  .budget-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+  .budget-item .label {
+    font-size: 13px;
+    opacity: 0.85;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+  }
+  .budget-item .val {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--gold);
+  }
+  .budget-item .unit {
+    font-size: 14px;
+    opacity: 0.7;
+  }
+  .budget-total {
+    border-top: 2px solid rgba(255,255,255,0.2);
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .budget-total .lbl {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .budget-total .amount {
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--gold);
+  }
+
+  /* CTA section */
+  .cta {
+    background: var(--card);
+    border-radius: 20px;
+    padding: 50px;
+    margin-top: 50px;
+    text-align: center;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  }
+  .cta a.btn {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    text-decoration: none;
+    padding: 16px 36px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 16px;
+    margin: 10px;
+  }
+  .cta a.btn:hover { background: #D35400; }
+  .cta a.btn.alt { background: var(--sea); }
+
+  /* Footer */
+  footer {
+    background: #2C3E50;
+    color: #BDC3C7;
+    padding: 40px 5vw;
+    text-align: center;
+    margin-top: 80px;
+    font-size: 14px;
+  }
+  footer .heart { color: #E74C3C; }
+
+  /* Travelers banner */
+  .travelers {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+    align-items: center;
+    margin: 36px 0 30px;
+    flex-wrap: wrap;
+  }
+  .traveler {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    padding: 10px 26px 10px 10px;
+    border-radius: 60px;
+    border: 1px solid rgba(255,255,255,0.35);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.18);
+  }
+  .traveler .avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid rgba(255,255,255,0.85);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+    flex-shrink: 0;
+    position: relative;
+  }
+  .traveler .avatar img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: 160%;
+    transform: translate(-50%, -50%) rotate(90deg);
+    transform-origin: center center;
+  }
+  .traveler.jirka .avatar img {
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+  }
+  .traveler .name {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+  .travelers .amp {
+    font-family: "Brush Script MT", "Lucida Handwriting", cursive;
+    font-size: 56px;
+    color: #FFD7C2;
+    text-shadow: 0 4px 18px rgba(0,0,0,0.4);
+    line-height: 1;
+    padding: 0 6px;
+    transform: translateY(-4px);
+  }
+
+  /* Couple section — love letter */
+  .couple {
+    background:
+      radial-gradient(circle at 20% 10%, rgba(233,30,99,0.08), transparent 50%),
+      radial-gradient(circle at 85% 90%, rgba(22,160,133,0.08), transparent 50%),
+      linear-gradient(135deg, #FFF5F0, #F0F9F7);
+    border-radius: 28px;
+    padding: 60px 50px;
+    text-align: center;
+    margin: 40px 0;
+    border: 1px solid #FFD7C2;
+    position: relative;
+    overflow: hidden;
+  }
+  .couple::before {
+    content: "♥";
+    position: absolute;
+    top: -40px; right: -10px;
+    font-size: 180px;
+    color: rgba(233,30,99,0.06);
+    line-height: 1;
+    pointer-events: none;
+  }
+  .couple .stamp {
+    display: inline-block;
+    font-family: "Brush Script MT", "Lucida Handwriting", cursive;
+    font-size: 28px;
+    color: #C2185B;
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+  }
+  .couple .together {
+    margin: 8px auto 28px;
+    max-width: 420px;
+    position: relative;
+  }
+  .couple .together .photo-frame {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 18px 50px rgba(0,0,0,0.18);
+    position: relative;
+  }
+  .couple .together .photo-frame img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 133%;
+    height: auto;
+    transform: translate(-50%, -50%) rotate(90deg);
+    transform-origin: center center;
+  }
+  .couple .together::after {
+    content: "♥";
+    position: absolute;
+    bottom: -14px; right: 24px;
+    background: #fff;
+    color: #E91E63;
+    width: 46px; height: 46px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  }
+  .couple .her {
+    display: inline-block;
+    margin: 6px 0 18px;
+  }
+  .couple .her img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center center;
+    transform: rotate(90deg);
+    border: 5px solid #fff;
+    box-shadow: 0 8px 24px rgba(233,30,99,0.18);
+  }
+  .couple .her .cap {
+    margin-top: 8px;
+    font-family: "Brush Script MT", "Lucida Handwriting", cursive;
+    font-size: 22px;
+    color: #C2185B;
+  }
+  .couple h3 {
+    color: var(--primary);
+    font-size: 32px;
+    margin: 10px 0 12px;
+    font-weight: 700;
+  }
+  .couple .signed {
+    margin-top: 22px;
+    font-family: "Brush Script MT", "Lucida Handwriting", cursive;
+    font-size: 26px;
+    color: var(--primary);
+    letter-spacing: 1px;
+  }
+  .couple p {
+    color: #555;
+    font-size: 17px;
+    max-width: 680px;
+    margin: 0 auto;
+    line-height: 1.75;
+  }
+  .couple p em.hi {
+    font-style: normal;
+    color: #C2185B;
+    font-weight: 600;
+  }
+
+  /* Carousel inside card */
+  .carousel {
+    position: relative;
+    height: 240px;
+    overflow: hidden;
+  }
+  .carousel .slides {
+    display: flex;
+    height: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+  }
+  .carousel .slides::-webkit-scrollbar { display: none; }
+  .carousel .slide {
+    flex: 0 0 100%;
+    height: 100%;
+    scroll-snap-align: start;
+    background-color: #DDE3E8;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+  .carousel .slide::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 55%, rgba(0,0,0,0.55));
+  }
+  .carousel .slide .caption {
+    position: absolute;
+    bottom: 12px;
+    left: 16px;
+    right: 16px;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    z-index: 2;
+  }
+  .carousel .dots {
+    position: absolute;
+    bottom: 8px;
+    right: 14px;
+    display: flex;
+    gap: 5px;
+    z-index: 3;
+  }
+  .carousel .dots .dot {
+    width: 7px;
+    height: 7px;
+    background: rgba(255,255,255,0.5);
+    border-radius: 50%;
+  }
+  .carousel .nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    background: rgba(255,255,255,0.85);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--primary);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    z-index: 4;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .card:hover .carousel .nav-btn { opacity: 1; }
+  .carousel .nav-btn.prev { left: 8px; }
+  .carousel .nav-btn.next { right: 8px; }
+  .carousel .badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: rgba(255,255,255,0.95);
+    color: var(--primary);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    z-index: 4;
+  }
+  .carousel .nights {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: var(--accent);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    z-index: 4;
+  }
+
+  /* Hotel card */
+  .hotel {
+    background: #F8F9FA;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border-left: 3px solid var(--sea);
+    margin-top: 12px;
+    font-size: 13px;
+  }
+  .hotel .hname {
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 14px;
+  }
+  .hotel .hprice {
+    color: var(--accent);
+    font-weight: 600;
+    margin-left: 8px;
+  }
+  .hotel a {
+    color: var(--sea);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 12px;
+  }
+  .hotel a:hover { text-decoration: underline; }
+
+  /* Flight table */
+  .flight-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    background: var(--card);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  }
+  .flight-table thead {
+    background: var(--primary);
+    color: white;
+  }
+  .flight-table th {
+    text-align: left;
+    padding: 14px 16px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .flight-table td {
+    padding: 16px;
+    border-bottom: 1px solid #ECF0F1;
+    font-size: 14px;
+    vertical-align: top;
+  }
+  .flight-table tr:last-child td { border-bottom: none; }
+  .flight-table tr:nth-child(even) { background: #FAFAFA; }
+  .flight-table .route {
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 16px;
+    white-space: nowrap;
+  }
+  .flight-table .date {
+    font-weight: 600;
+    color: var(--accent);
+  }
+  .flight-table .time {
+    font-family: "SF Mono", Monaco, monospace;
+    font-weight: 600;
+  }
+  .flight-table .airline {
+    color: var(--muted);
+    font-size: 13px;
+  }
+  .flight-table .duration {
+    background: #ECF0F1;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--primary);
+    display: inline-block;
+  }
+  .flight-note {
+    background: #FFF8E7;
+    border-left: 4px solid var(--gold);
+    padding: 16px 20px;
+    margin-top: 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #6B5B30;
+  }
+
+  /* Highlights list */
+  .highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    margin-top: 30px;
+  }
+  .hl {
+    background: var(--card);
+    padding: 24px;
+    border-radius: 12px;
+    border-left: 4px solid var(--accent);
+  }
+  .hl .icon { font-size: 32px; margin-bottom: 10px; }
+  .hl h4 { color: var(--primary); margin-bottom: 6px; font-size: 17px; }
+  .hl p { font-size: 14px; color: #555; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-intro">moje milovaná Moniko,</div>
+  <h1>tohle bude<br>jenom <em>naše</em> ♥</h1>
+  <p class="tagline">
+    Dvacet dní, čtyři ostrovy, jeden Pacifik — a já a ty uprostřed všeho.
+    <span class="small">Není to dovolená. Je to slib, že tě budu mít napořád.</span>
+  </p>
+
+  <div class="hero-couple">
+    <div class="portrait rotated">
+      <img src="./photo-a.jpg" alt="Monika">
+      <span class="name-tag">Monika</span>
+    </div>
+    <div class="amp">&amp;</div>
+    <div class="portrait">
+      <img src="./jirka.jpg" alt="Jirka">
+      <span class="name-tag">Jirka</span>
+    </div>
+  </div>
+
+  <div class="countdown" id="countdown" aria-live="polite">
+    <span class="cd-label">do chvíle, kdy si spolu řekneme „aloha"</span>
+    <div class="cd-grid">
+      <div class="cd-box"><span class="cd-num" data-d>—</span><span class="cd-u">dní</span></div>
+      <div class="cd-box"><span class="cd-num" data-h>—</span><span class="cd-u">hodin</span></div>
+      <div class="cd-box"><span class="cd-num" data-m>—</span><span class="cd-u">minut</span></div>
+      <div class="cd-box"><span class="cd-num" data-s>—</span><span class="cd-u">vteřin</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- STATS BAND -->
+<div class="stats-band">
+  <div class="stats">
+    <div class="stat"><span class="num">20</span><span class="label">dnů spolu</span></div>
+    <div class="stat"><span class="num">4</span><span class="label">ostrovy</span></div>
+    <div class="stat"><span class="num">∞</span><span class="label">západů slunce</span></div>
+    <div class="stat"><span class="num">1</span><span class="label">ty &amp; já</span></div>
+  </div>
+</div>
+
+<!-- COUPLE -->
+<section>
+  <div class="couple">
+    <span class="stamp">Moje milovaná Moniko,</span>
+    <h3>tohle není plán. Tohle je slib.</h3>
+    <div class="together">
+      <div class="photo-frame">
+        <img src="./photo-b.jpg" alt="My dva — naše nedávné dobrodružství" loading="lazy">
+      </div>
+    </div>
+    <div class="her">
+      <img src="./photo-a.jpg" alt="Moje krásná Monika">
+      <div class="cap">moje krásná holka ♥</div>
+    </div>
+    <p>
+      Dvacet dní, kdy budeš jenom <em class="hi">moje</em> — bez schůzek, bez termínů,
+      bez ničeho mezi námi než palmy, oceán a hvězdy nad Mauna Keou.
+      Slibuju ti východ slunce nad Haleakalou, kdy ti budu držet ruku v rukavici;
+      večery u ohně na Hanalei Bay; čtyři ostrovy, na kterých budeme úplně sami uprostřed Pacifiku.
+      Tohle <em class="hi">si zasloužíš</em>. Tohle <em class="hi">si zasloužíme</em>.
+    </p>
+    <div class="signed">— navždy tvůj Jirka</div>
+  </div>
+</section>
+
+<!-- ROUTE -->
+<section>
+  <h2>🗺️ Trasa</h2>
+  <p class="subtitle">Optimální gradace: warm-up v Kalifornii → 12 nocí ve dvou tváří Havaje (city + adventure) → poslední tropický oddech v Miami.</p>
+  <div class="route-pills">
+    <span class="pill">Praha</span>
+    <span class="pill flight">✈ 12 h</span>
+    <span class="pill">Los Angeles</span>
+    <span class="pill flight">✈ 6 h</span>
+    <span class="pill hawaii">Oahu</span>
+    <span class="pill flight">✈ 40 min</span>
+    <span class="pill hawaii">Maui</span>
+    <span class="pill flight">✈ 50 min</span>
+    <span class="pill hawaii">Big Island</span>
+    <span class="pill flight">✈ 1h 30</span>
+    <span class="pill hawaii">Kauai</span>
+    <span class="pill flight">✈ 13 h</span>
+    <span class="pill">Miami</span>
+    <span class="pill flight">✈ 12 h</span>
+    <span class="pill">Praha</span>
+  </div>
+</section>
+
+<!-- HIGHLIGHTS -->
+<section>
+  <h2>✨ Co prožijeme</h2>
+  <p class="subtitle">Okamžiky, pro které tahle cesta vznikla — a kvůli kterým si ji budeme pamatovat napořád.</p>
+  <div class="highlights">
+    <div class="hl"><div class="icon">🌋</div><h4>Volcanoes NP</h4><p>Aktivní sopka Kilauea — chodíš po lávovém poli, večer záře magmatu.</p></div>
+    <div class="hl"><div class="icon">⭐</div><h4>Mauna Kea 4200m</h4><p>Hvězdárna nad oblaky — jedno z nejlepších míst Země na stargazing.</p></div>
+    <div class="hl"><div class="icon">🚁</div><h4>Helikoptéra Kauai</h4><p>Na Pali Coast a vodopády shora — zážitek za 60 minut, vzpomínky napořád.</p></div>
+    <div class="hl"><div class="icon">🐢</div><h4>Snorkeling se želvami</h4><p>Hanauma Bay (Oahu), Molokini Crater (Maui), Black Rock (Maui).</p></div>
+    <div class="hl"><div class="icon">🌅</div><h4>Haleakala sunrise</h4><p>Východ slunce v 3055 m — nad oblaky, mezi barvami sopečné krajiny.</p></div>
+    <div class="hl"><div class="icon">🌊</div><h4>Road to Hana</h4><p>620 zatáček, 59 mostů, desítky vodopádů — jedna z top road trips planety.</p></div>
+    <div class="hl"><div class="icon">🦩</div><h4>South Beach Miami</h4><p>Art Deco, palmy, kubánská hudba, sunset koktejl na Ocean Drive.</p></div>
+    <div class="hl"><div class="icon">⚓</div><h4>Pearl Harbor</h4><p>USS Arizona Memorial — místo, kde se psaly dějiny 20. století.</p></div>
+  </div>
+</section>
+
+<!-- FLIGHT PLAN -->
+<section>
+  <h2>✈️ Letový plán</h2>
+  <p class="subtitle">Termín: <strong>Pá 20. 8. – St 8. 9. 2027</strong>. Konkrétní časy podle aktuálních letových řádů — finální čísla letů potvrdí cestovka při rezervaci.</p>
+
+  <div class="flight-note" style="background:#E8F5E9; border-left-color:#16A085; color:#1B5E20;">
+    🌞 <strong>Proč srpen 2027 a ne červenec?</strong> Havajská sezóna je stabilní (26–28 °C celý rok), ale <strong>cenově je srpen citelně levnější</strong>. Červenec = US školní prázdniny + Asie peak = nejdražší + plno. Druhá polovina srpna = ceny hotelů klesnou o 15–25 % proti červenci, americké školy začínají kolem 20. 8. → méně rodin s dětmi. Hurricane sezóna v Pacifiku je sice od června do listopadu, ale Havaj zasáhne přímý hurricane <strong>průměrně jen jednou za 4–5 let</strong> (většina drah uhne na jih). <strong>Konec srpna = nejlepší poměr cena/zážitek/klid.</strong>
+  </div>
+
+  <table class="flight-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Datum</th>
+        <th>Trasa</th>
+        <th>Dopravce / spoj</th>
+        <th>Odlet → Přílet (LCL)</th>
+        <th>Délka</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="date">1</td>
+        <td class="date">Pá 20. 8. 2027</td>
+        <td class="route">PRG → FRA → LAX</td>
+        <td class="airline">Lufthansa<br>LH 1395 + LH 452</td>
+        <td class="time">06:45 PRG<br>→ 12:50 LAX</td>
+        <td><span class="duration">~14 h</span></td>
+      </tr>
+      <tr>
+        <td class="date">2</td>
+        <td class="date">So 21. 8. 2027</td>
+        <td class="route">LAX → HNL</td>
+        <td class="airline">Hawaiian Airlines<br>HA 1 (přímý)</td>
+        <td class="time">08:50 LAX<br>→ 11:55 HNL</td>
+        <td><span class="duration">5 h 5 m</span></td>
+      </tr>
+      <tr>
+        <td class="date">3</td>
+        <td class="date">St 25. 8. 2027</td>
+        <td class="route">HNL → OGG (Maui)</td>
+        <td class="airline">Hawaiian Airlines<br>HA 289</td>
+        <td class="time">11:30 HNL<br>→ 12:11 OGG</td>
+        <td><span class="duration">41 min</span></td>
+      </tr>
+      <tr>
+        <td class="date">4</td>
+        <td class="date">Ne 29. 8. 2027</td>
+        <td class="route">OGG → KOA (Big Island)</td>
+        <td class="airline">Hawaiian Airlines<br>HA 346</td>
+        <td class="time">09:32 OGG<br>→ 10:18 KOA</td>
+        <td><span class="duration">46 min</span></td>
+      </tr>
+      <tr>
+        <td class="date">5</td>
+        <td class="date">St 1. 9. 2027</td>
+        <td class="route">KOA → HNL → LIH (Kauai)</td>
+        <td class="airline">Hawaiian Airlines<br>HA 210 + HA 135</td>
+        <td class="time">10:00 KOA<br>→ 12:46 LIH</td>
+        <td><span class="duration">2 h 46 m</span></td>
+      </tr>
+      <tr>
+        <td class="date">6</td>
+        <td class="date">Ne 5. 9. 2027</td>
+        <td class="route">LIH → LAX → MIA</td>
+        <td class="airline">Hawaiian + American<br>HA 22 + AA 1244 (overnight)</td>
+        <td class="time">11:53 LIH<br>→ 06:54 +1 MIA</td>
+        <td><span class="duration">~16 h (vč. layoveru 3 h v LAX)</span></td>
+      </tr>
+      <tr>
+        <td class="date">7</td>
+        <td class="date">Út 7. 9. 2027</td>
+        <td class="route">MIA → FRA → PRG</td>
+        <td class="airline">Lufthansa<br>LH 463 + LH 1396 (overnight)</td>
+        <td class="time">17:35 MIA<br>→ 11:00 +2 PRG (St 8. 9.)</td>
+        <td><span class="duration">~17 h</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="flight-note">
+    💡 <strong>Tip k rezervaci:</strong> Long-haul lety (PRG→LAX a MIA→PRG) doporučuji koupit jako jeden <em>multi-city ticket</em> přes Lufthansa nebo Star Alliance partnera (zlevnění o 200–300 EUR oproti single-trip). Interní havajské hopy přes <strong>Hawaiian Airlines</strong> jako samostatný segment (~95 USD každý). Pacifický přejezd LIH→MIA stojí za to koupit s rozumným 3h layoverem v LAX, ne s minimálním transferem.
+  </div>
+
+  <div class="flight-note" style="background:#FFE7E7; border-left-color:#E74C3C; color:#7A2A2A; margin-top:10px;">
+    ⚠️ <strong>Pozor na časová pásma:</strong> mezi Havají a Miami je posun <strong>+6 h vpřed</strong>. Noční let LIH→LAX→MIA je nejtěžší úsek cesty — vyspat se v letadle pomůže, druhý den v Miami brát klidně.
+  </div>
+</section>
+
+<!-- DESTINATIONS -->
+<section>
+  <h2>📍 Destinace</h2>
+  <p class="subtitle">Šest destinací, šest tváří. Foto galerie ke každému místu — listuj v kartách. Konkrétní hotely jsou napojené přímo na Booking.com.</p>
+
+  <div class="grid">
+
+    <!-- LA -->
+    <div class="card">
+      <div class="carousel" data-carousel>
+        <span class="badge">Den 1</span>
+        <span class="nights">1 noc</span>
+        <div class="slides">
+          <div class="slide" style="background-image:url('./img/la-pier.jpg')"><div class="caption">Santa Monica Pier</div></div>
+          <div class="slide" style="background-image:url('./img/la-hollywood.jpg')"><div class="caption">Hollywood Sign</div></div>
+          <div class="slide" style="background-image:url('./img/la-venice.jpg')"><div class="caption">Venice Beach</div></div>
+          <div class="slide" style="background-image:url('./img/la-sunset.jpg')"><div class="caption">Sunset nad Pacifikem</div></div>
+        </div>
+        <button class="nav-btn prev" data-prev>‹</button>
+        <button class="nav-btn next" data-next>›</button>
+        <div class="dots"></div>
+      </div>
+      <div class="body">
+        <div class="place">Kalifornie</div>
+        <h3>Los Angeles</h3>
+        <p>Warm-up po dlouhém letu — Santa Monica Pier, palmy, oceán, první americký burger.</p>
+        <div class="hotel">
+          <div class="hname">⭐ Shore Hotel <span class="hprice">~240 €/noc</span></div>
+          <div style="margin: 4px 0 6px; color:#666;">4* boutique, přímo u Santa Monica Pier</div>
+          <a href="https://www.booking.com/hotel/us/shore.html" target="_blank">🔗 Rezervovat na Booking →</a>
+        </div>
+        <div class="links">
+          <a href="https://www.google.com/maps/place/Santa+Monica" target="_blank">🗺️ Mapa</a>
+          <a class="alt" href="https://www.santamonica.com/things-to-do/" target="_blank">Aktivity</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- OAHU -->
+    <div class="card">
+      <div class="carousel" data-carousel>
+        <span class="badge">Den 2–5</span>
+        <span class="nights">4 noci · Havaj #1</span>
+        <div class="slides">
+          <div class="slide" style="background-image:url('./img/oahu-waikiki.jpg')"><div class="caption">Waikiki Beach</div></div>
+          <div class="slide" style="background-image:url('./img/oahu-diamond.jpg')"><div class="caption">Diamond Head Crater</div></div>
+          <div class="slide" style="background-image:url('./img/oahu-northshore.jpg')"><div class="caption">North Shore — surf</div></div>
+          <div class="slide" style="background-image:url('./img/oahu-lanikai.jpg')"><div class="caption">Lanikai Beach</div></div>
+          <div class="slide" style="background-image:url('./img/oahu-pearl.jpg')"><div class="caption">Pearl Harbor</div></div>
+        </div>
+        <button class="nav-btn prev" data-prev>‹</button>
+        <button class="nav-btn next" data-next>›</button>
+        <div class="dots"></div>
+      </div>
+      <div class="body">
+        <div class="place">Havaj — Oahu</div>
+        <h3>Honolulu &amp; Waikiki</h3>
+        <p>City + historie + ikonické pláže. Diamond Head, Pearl Harbor, North Shore se želvami a surfaři.</p>
+        <ul>
+          <li>Diamond Head sunrise hike</li>
+          <li>Pearl Harbor + USS Arizona</li>
+          <li>North Shore + Laniakea želvy</li>
+          <li>Hanauma Bay snorkeling</li>
+          <li>Kualoa Ranch — Jurský park</li>
+        </ul>
+        <div class="hotel">
+          <div class="hname">⭐ The Royal Hawaiian (Pink Palace) <span class="hprice">~340 €/noc</span></div>
+          <div style="margin: 4px 0 6px; color:#666;">Ikonický 5* resort přímo na Waikiki Beach</div>
+          <a href="https://www.booking.com/hotel/us/the-royal-hawaiian-a-luxury-collection-resort-honolulu1.html" target="_blank">🔗 Rezervovat na Booking →</a>
+        </div>
+        <div class="hotel">
+          <div class="hname">💰 Alternativa: Outrigger Reef Waikiki <span class="hprice">~240 €/noc</span></div>
+          <a href="https://www.booking.com/hotel/us/outrigger-reef-on-the-beach.html" target="_blank">🔗 Booking →</a>
+        </div>
+        <div class="links">
+          <a href="https://www.recreation.gov/ticket/facility/233338" target="_blank">Pearl Harbor</a>
+          <a class="alt" href="https://www.kualoa.com/" target="_blank">Kualoa Ranch</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAUI -->
+    <div class="card">
+      <div class="carousel" data-carousel>
+        <span class="badge">Den 6–9</span>
+        <span class="nights">4 noci · Havaj #2</span>
+        <div class="slides">
+          <div class="slide" style="background-image:url('./img/maui-kaanapali.jpg')"><div class="caption">Ka'anapali Beach</div></div>
+          <div class="slide" style="background-image:url('./img/maui-haleakala.jpg')"><div class="caption">Road to Hana — vodopády</div></div>
+          <div class="slide" style="background-image:url('./img/maui-haleakala.jpg')"><div class="caption">Haleakala — východ slunce nad oblaky</div></div>
+          <div class="slide" style="background-image:url('./img/maui-molokini.jpg')"><div class="caption">Molokini Crater snorkeling</div></div>
+          <div class="slide" style="background-image:url('./img/big-blacksand.jpg')"><div class="caption">Wai'anapanapa — černá pláž</div></div>
+        </div>
+        <button class="nav-btn prev" data-prev>‹</button>
+        <button class="nav-btn next" data-next>›</button>
+        <div class="dots"></div>
+      </div>
+      <div class="body">
+        <div class="place">Havaj — Maui</div>
+        <h3>Ka'anapali &amp; adventure</h3>
+        <p>Resort, pláže, adrenalin. Road to Hana, sopka Haleakala při východu slunce, snorkeling u Molokini.</p>
+        <ul>
+          <li>Road to Hana (celý den)</li>
+          <li>Haleakala sunrise (3055 m)</li>
+          <li>Molokini Crater snorkel</li>
+          <li>Old Lahaina Lu'au</li>
+          <li>Black Rock cliff jump</li>
+        </ul>
+        <div class="hotel">
+          <div class="hname">⭐ Sheraton Maui Resort &amp; Spa <span class="hprice">~380 €/noc</span></div>
+          <div style="margin: 4px 0 6px; color:#666;">4* přímo u Black Rock (snorkel z pláže!)</div>
+          <a href="https://www.booking.com/hotel/us/sheraton-maui-resort-spa.html" target="_blank">🔗 Rezervovat na Booking →</a>
+        </div>
+        <div class="hotel">
+          <div class="hname">💎 Luxury: Hyatt Regency Maui <span class="hprice">~520 €/noc</span></div>
+          <a href="https://www.booking.com/hotel/us/hyatt-regency-maui-resort-and-spa.html" target="_blank">🔗 Booking →</a>
+        </div>
+        <div class="links">
+          <a href="https://www.recreation.gov/timed-entry/10084665" target="_blank">Haleakala permit</a>
+          <a class="alt" href="https://www.oldlahainaluau.com/" target="_blank">Lu'au</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- BIG ISLAND -->
+    <div class="card">
+      <div class="carousel" data-carousel>
+        <span class="badge">Den 10–12</span>
+        <span class="nights">3 noci · Havaj #3</span>
+        <div class="slides">
+          <div class="slide" style="background-image:url('./img/big-kilauea.jpg')"><div class="caption">Kilauea — láva</div></div>
+          <div class="slide" style="background-image:url('./img/big-maunakea.jpg')"><div class="caption">Mauna Kea — stargazing</div></div>
+          <div class="slide" style="background-image:url('./img/big-blacksand.jpg')"><div class="caption">Punaluu — černý písek</div></div>
+          <div class="slide" style="background-image:url('./img/big-kona.jpg')"><div class="caption">Kona Coffee Country</div></div>
+          <div class="slide" style="background-image:url('./img/big-hapuna.jpg')"><div class="caption">Hapuna Beach</div></div>
+        </div>
+        <button class="nav-btn prev" data-prev>‹</button>
+        <button class="nav-btn next" data-next>›</button>
+        <div class="dots"></div>
+      </div>
+      <div class="body">
+        <div class="place">Havaj — Big Island</div>
+        <h3>Sopky &amp; hvězdy</h3>
+        <p>Nejdramatičtější ostrov. Aktivní sopka Kilauea, hvězdárna Mauna Kea ve 4200 m, černé i zelené pláže.</p>
+        <ul>
+          <li>Hawaii Volcanoes NP — Kilauea</li>
+          <li>Mauna Kea sunset + stargazing</li>
+          <li>Černá pláž Punaluu (želvy)</li>
+          <li>Zelená pláž Papakōlea</li>
+          <li>Kona coffee farm tour</li>
+        </ul>
+        <div class="hotel">
+          <div class="hname">🌋 Volcano Village Lodge (1. noc) <span class="hprice">~220 €/noc</span></div>
+          <div style="margin: 4px 0 6px; color:#666;">5 min od vstupu do NP, klid v lesích</div>
+          <a href="https://www.booking.com/hotel/us/volcano-village-lodge.html" target="_blank">🔗 Booking →</a>
+        </div>
+        <div class="hotel">
+          <div class="hname">🏖️ Royal Kona Resort (2.+3. noc) <span class="hprice">~280 €/noc</span></div>
+          <div style="margin: 4px 0 6px; color:#666;">Přímo u Kailua-Kona pier, dobrá poloha pro Mauna Kea</div>
+          <a href="https://www.booking.com/hotel/us/royal-kona-resort.html" target="_blank">🔗 Booking →</a>
+        </div>
+        <div class="links">
+          <a href="https://www.nps.gov/havo/" target="_blank">Volcanoes NP</a>
+          <a class="alt" href="https://www.maunakea.com/" target="_blank">Mauna Kea Tours</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- KAUAI -->
+    <div class="card">
+      <div class="carousel" data-carousel>
+        <span class="badge">Den 13–16</span>
+        <span class="nights">4 noci · Havaj #4</span>
+        <div class="slides">
+          <div class="slide" style="background-image:url('./img/kauai-napali.jpg')"><div class="caption">Na Pali Coast — útesy</div></div>
+          <div class="slide" style="background-image:url('./img/big-blacksand.jpg')"><div class="caption">Waimea Canyon</div></div>
+          <div class="slide" style="background-image:url('./img/kauai-hanalei.jpg')"><div class="caption">Hanalei Bay</div></div>
+          <div class="slide" style="background-image:url('./img/hero.jpg')"><div class="caption">Helikoptéra nad ostrovem</div></div>
+          <div class="slide" style="background-image:url('./img/kauai-poipu.jpg')"><div class="caption">Poipu Beach</div></div>
+        </div>
+        <button class="nav-btn prev" data-prev>‹</button>
+        <button class="nav-btn next" data-next>›</button>
+        <div class="dots"></div>
+      </div>
+      <div class="body">
+        <div class="place">Havaj — Kauai (Garden Isle)</div>
+        <h3>Divoká příroda</h3>
+        <p>Nejstarší a nejkrásnější ostrov. Na Pali Coast z lodi i z helikoptéry, Waimea Canyon = „Grand Canyon Pacifiku".</p>
+        <ul>
+          <li>Na Pali Coast boat tour</li>
+          <li>Helikoptéra nad ostrovem</li>
+          <li>Waimea Canyon</li>
+          <li>Hanalei Bay sunset</li>
+          <li>Polihale Beach západ slunce</li>
+        </ul>
+        <div class="hotel">
+          <div class="hname">⭐ 1 Hotel Hanalei Bay (sever, 2 noci) <span class="hprice">~480 €/noc</span></div>
+          <div style="margin: 4px 0 6px; color:#666;">Luxusní eco-resort u Hanalei Bay</div>
+          <a href="https://www.booking.com/hotel/us/1-hotel-hanalei-bay.html" target="_blank">🔗 Booking →</a>
+        </div>
+        <div class="hotel">
+          <div class="hname">🌺 Grand Hyatt Kauai (jih, 2 noci) <span class="hprice">~420 €/noc</span></div>
+          <div style="margin: 4px 0 6px; color:#666;">4* resort s lagunou, na Poipu pláži</div>
+          <a href="https://www.booking.com/hotel/us/grand-hyatt-kauai-resort-and-spa.html" target="_blank">🔗 Booking →</a>
+        </div>
+        <div class="links">
+          <a href="https://www.holoholocharters.com/" target="_blank">Na Pali boat</a>
+          <a class="alt" href="https://www.bluehawaiian.com/kauai/" target="_blank">Helikoptéra</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- MIAMI -->
+    <div class="card">
+      <div class="carousel" data-carousel>
+        <span class="badge">Den 18–19</span>
+        <span class="nights">2 noci</span>
+        <div class="slides">
+          <div class="slide" style="background-image:url('./img/miami-southbeach.jpg')"><div class="caption">South Beach lifeguards</div></div>
+          <div class="slide" style="background-image:url('./img/miami-southbeach.jpg')"><div class="caption">Ocean Drive — Art Deco</div></div>
+          <div class="slide" style="background-image:url('./img/miami-southbeach.jpg')"><div class="caption">Wynwood Walls — street art</div></div>
+          <div class="slide" style="background-image:url('./img/miami-everglades.jpg')"><div class="caption">Everglades — airboat</div></div>
+          <div class="slide" style="background-image:url('./img/miami-everglades.jpg')"><div class="caption">Little Havana</div></div>
+        </div>
+        <button class="nav-btn prev" data-prev>‹</button>
+        <button class="nav-btn next" data-next>›</button>
+        <div class="dots"></div>
+      </div>
+      <div class="body">
+        <div class="place">Florida</div>
+        <h3>Miami — South Beach</h3>
+        <p>Art Deco, palmy, cuban food a koktejly. Lehký odpočinek před návratem domů.</p>
+        <ul>
+          <li>South Beach + Ocean Drive</li>
+          <li>Little Havana (Versailles)</li>
+          <li>Wynwood Walls street art</li>
+          <li>Everglades airboat safari</li>
+        </ul>
+        <div class="hotel">
+          <div class="hname">⭐ The Betsy — South Beach <span class="hprice">~290 €/noc</span></div>
+          <div style="margin: 4px 0 6px; color:#666;">Art Deco boutique, 1 blok od pláže</div>
+          <a href="https://www.booking.com/hotel/us/the-betsy-south-beach.html" target="_blank">🔗 Rezervovat na Booking →</a>
+        </div>
+        <div class="hotel">
+          <div class="hname">💎 Luxury: 1 Hotel South Beach <span class="hprice">~510 €/noc</span></div>
+          <a href="https://www.booking.com/hotel/us/1-hotel-south-beach.html" target="_blank">🔗 Booking →</a>
+        </div>
+        <div class="links">
+          <a href="https://thewynwoodwalls.com/" target="_blank">Wynwood</a>
+          <a class="alt" href="https://www.sawgrassrecreation.com/" target="_blank">Everglades</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section>
+  <h2>📅 Den po dni</h2>
+  <p class="subtitle">Zhuštěný itinerář (detail v přiloženém Excelu).</p>
+  <div class="timeline">
+    <div class="day"><div class="h"><span class="num">Pá 20. 8.</span>Praha → Los Angeles</div><p>Ranní odlet PRG 06:45, přílet LAX 12:50. Santa Monica Pier, večeře u oceánu.</p></div>
+    <div class="day"><div class="h"><span class="num">So 21. 8.</span>LA → Honolulu</div><p>Ranní let LAX→HNL 08:50→11:55. Check-in Waikiki, aklimatizace, sunset mai tai.</p></div>
+    <div class="day"><div class="h"><span class="num">Ne 22. 8.</span>Oahu — historie</div><p>Diamond Head sunrise + Pearl Harbor + Waikiki Beach.</p></div>
+    <div class="day"><div class="h"><span class="num">Po 23. 8.</span>Oahu — North Shore</div><p>Road trip: Haleiwa, Laniakea (želvy), Dole Plantation, sunset Banzai.</p></div>
+    <div class="day"><div class="h"><span class="num">Út 24. 8.</span>Oahu — Kualoa &amp; snorkel</div><p>Hanauma Bay snorkel + Kualoa Ranch Jurský park tour.</p></div>
+    <div class="day"><div class="h"><span class="num">St 25. 8.</span>Oahu → Maui</div><p>Lanikai Beach, hop HNL→OGG 11:30, check-in Ka'anapali, Black Rock sunset.</p></div>
+    <div class="day"><div class="h"><span class="num">Čt 26. 8.</span>Maui — Road to Hana</div><p>Celodenní road trip — vodopády, černá pláž, bambusový les.</p></div>
+    <div class="day"><div class="h"><span class="num">Pá 27. 8.</span>Maui — Haleakala</div><p>Sunrise ve 3055 m (start 3 AM!), odpol. Wailea, večer Lahaina.</p></div>
+    <div class="day"><div class="h"><span class="num">So 28. 8.</span>Maui — Molokini &amp; Lu'au</div><p>Ranní katamarán Molokini snorkel, večer Old Lahaina Lu'au.</p></div>
+    <div class="day"><div class="h"><span class="num">Ne 29. 8.</span>Maui → Big Island</div><p>Hop OGG→KOA 09:32. Kona coffee farm, přejezd do Volcano Village.</p></div>
+    <div class="day"><div class="h"><span class="num">Po 30. 8.</span>Big Island — Volcanoes</div><p>Celý den NP: Kilauea Iki trek, lávové tunely, večerní záře.</p></div>
+    <div class="day"><div class="h"><span class="num">Út 31. 8.</span>Big Island — Mauna Kea</div><p>Černá + zelená pláž. Večer hvězdárna ve 4200 m + stargazing.</p></div>
+    <div class="day"><div class="h"><span class="num">St 1. 9.</span>Big Island → Kauai</div><p>Hapuna Beach, let KOA→HNL→LIH 10:00→12:46. Hanalei Bay sunset.</p></div>
+    <div class="day"><div class="h"><span class="num">Čt 2. 9.</span>Kauai — Na Pali Coast</div><p>Celodenní boat tour pod útesy — delfíni, jeskyně, vodopády.</p></div>
+    <div class="day"><div class="h"><span class="num">Pá 3. 9.</span>Kauai — Waimea Canyon</div><p>Kalalau Lookout, Pu'u Hinahina, sunset Polihale Beach.</p></div>
+    <div class="day"><div class="h"><span class="num">So 4. 9.</span>Kauai — Helikoptéra</div><p>Ranní heli tour celého ostrova, odpoledne Poipu Beach.</p></div>
+    <div class="day"><div class="h"><span class="num">Ne 5. 9.</span>Kauai → Miami</div><p>Spouting Horn, odpolední let LIH 11:53 → LAX → MIA 06:54 +1 (overnight).</p></div>
+    <div class="day"><div class="h"><span class="num">Po 6. 9.</span>Miami — South Beach</div><p>Příl. ráno. Ocean Drive, Lincoln Road, večer Little Havana.</p></div>
+    <div class="day"><div class="h"><span class="num">Út 7. 9.</span>Miami → Praha</div><p>Everglades airboat + Wynwood Walls. Večerní let MIA 17:35 → FRA → PRG.</p></div>
+    <div class="day"><div class="h"><span class="num">St 8. 9.</span>Návrat Praha ✅</div><p>Přílet PRG 11:00. Welcome home!</p></div>
+  </div>
+</section>
+
+<!-- BUDGET -->
+<section>
+  <h2>💰 Rozpočet</h2>
+  <p class="subtitle">Pro takovou cestu existuje rozumný rámec — ale upřímně, <strong>tohle není o číslech</strong>. Je to o tom, že si tohle spolu zasloužíme.</p>
+
+  <details style="background: var(--card); border-radius: 16px; padding: 20px 28px; box-shadow: 0 4px 24px rgba(0,0,0,0.06); margin-top: 20px;">
+    <summary style="cursor: pointer; font-weight: 600; color: var(--primary); font-size: 16px; user-select: none;">
+      📊 Pokud tě zajímá detailní rozpočet, rozklikni →
+    </summary>
+    <div class="budget-box" style="margin-top: 24px;">
+      <div class="budget-grid">
+        <div class="budget-item"><div class="label">Letenky (7 segm.)</div><div class="val">2 695</div><div class="unit">EUR</div></div>
+        <div class="budget-item"><div class="label">Ubytování (18 n.)</div><div class="val">5 880</div><div class="unit">EUR</div></div>
+        <div class="budget-item"><div class="label">Půjčovny aut</div><div class="val">975</div><div class="unit">EUR</div></div>
+        <div class="budget-item"><div class="label">Aktivity</div><div class="val">1 349</div><div class="unit">EUR</div></div>
+        <div class="budget-item"><div class="label">Jídlo + drobné</div><div class="val">1 795</div><div class="unit">EUR</div></div>
+        <div class="budget-item"><div class="label">Pojištění + ESTA</div><div class="val">120</div><div class="unit">EUR</div></div>
+      </div>
+      <div class="budget-total">
+        <div class="lbl">CELKEM (1 osoba, vč. 10% rezervy)</div>
+        <div class="amount">~13 960 €</div>
+      </div>
+      <div class="budget-total" style="margin-top: 20px;">
+        <div class="lbl">Pro Moniku &amp; Jirku dohromady (sdílené hotely + auta)</div>
+        <div class="amount">~22 800 €</div>
+      </div>
+    </div>
+    <p style="margin-top: 20px; color: var(--muted); font-size: 14px; text-align: center; font-style: italic;">
+      Plné rozpadnutí položek najdeš v <a href="./itinerar_havaj_2027.xlsx" download style="color: var(--accent);">přiloženém Excelu</a>.
+    </p>
+  </details>
+</section>
+
+<!-- CTA -->
+<section>
+  <div class="cta">
+    <h2 style="margin-bottom: 20px;">📎 Soubory k rezervaci</h2>
+    <p style="color: #555; max-width: 700px; margin: 0 auto 20px;">Detailní Excel obsahuje letenky, hotely, aktivity, půjčovny, rozpočet a checklist s termíny rezervací.</p>
+    <a class="btn" href="./itinerar_havaj_2027.xlsx" download>⬇ Stáhnout Excel itinerář</a>
+    <a class="btn alt" href="https://www.gohawaii.com/" target="_blank">🌺 Oficiální Havaj guide</a>
+  </div>
+</section>
+
+<footer>
+  S láskou připraveno pro <strong>Moniku</strong> <span class="heart">♥</span> · 20. 8. – 8. 9. 2027 · čtyři ostrovy, jedna ona<br>
+  <span style="opacity:.7">„Aloha" znamená lásku. Není to náhoda, že tam letíme spolu.</span>
+</footer>
+
+<script>
+// Init carousels: dots, click-nav, auto-update dot on scroll
+document.querySelectorAll('[data-carousel]').forEach(carousel => {
+  const slides = carousel.querySelector('.slides');
+  const slideEls = carousel.querySelectorAll('.slide');
+  const dotsWrap = carousel.querySelector('.dots');
+  const prev = carousel.querySelector('[data-prev]');
+  const next = carousel.querySelector('[data-next]');
+
+  // Build dots
+  slideEls.forEach((_, i) => {
+    const d = document.createElement('span');
+    d.className = 'dot';
+    if (i === 0) d.style.background = 'white';
+    dotsWrap.appendChild(d);
+  });
+
+  const update = () => {
+    const idx = Math.round(slides.scrollLeft / slides.clientWidth);
+    dotsWrap.querySelectorAll('.dot').forEach((d, i) => {
+      d.style.background = i === idx ? 'white' : 'rgba(255,255,255,0.5)';
+    });
+  };
+
+  slides.addEventListener('scroll', update, { passive: true });
+
+  prev.addEventListener('click', () => {
+    slides.scrollBy({ left: -slides.clientWidth, behavior: 'smooth' });
+  });
+  next.addEventListener('click', () => {
+    slides.scrollBy({ left: slides.clientWidth, behavior: 'smooth' });
+  });
+
+  // Auto-rotate every 5s if user not interacting
+  let auto = setInterval(() => {
+    const atEnd = slides.scrollLeft + slides.clientWidth >= slides.scrollWidth - 5;
+    slides.scrollTo({
+      left: atEnd ? 0 : slides.scrollLeft + slides.clientWidth,
+      behavior: 'smooth'
+    });
+  }, 5000);
+
+  carousel.addEventListener('mouseenter', () => clearInterval(auto));
+});
+
+// Countdown to 20. 8. 2027 06:45 (departure)
+(function () {
+  const target = new Date('2027-08-20T06:45:00+02:00').getTime();
+  const el = document.getElementById('countdown');
+  if (!el) return;
+  const d = el.querySelector('[data-d]');
+  const h = el.querySelector('[data-h]');
+  const m = el.querySelector('[data-m]');
+  const s = el.querySelector('[data-s]');
+  const pad = (n) => String(n).padStart(2, '0');
+  function tick() {
+    const diff = target - Date.now();
+    if (diff <= 0) {
+      d.textContent = h.textContent = m.textContent = s.textContent = '0';
+      el.querySelector('.cd-label').textContent = 'Letíme! 🌺';
+      return;
+    }
+    const dd = Math.floor(diff / 86400000);
+    const hh = Math.floor((diff % 86400000) / 3600000);
+    const mm = Math.floor((diff % 3600000) / 60000);
+    const ss = Math.floor((diff % 60000) / 1000);
+    d.textContent = dd;
+    h.textContent = pad(hh);
+    m.textContent = pad(mm);
+    s.textContent = pad(ss);
+  }
+  tick();
+  setInterval(tick, 1000);
+})();
+</script>
+
+</body>
+</html>
