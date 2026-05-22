@@ -118,19 +118,11 @@
     flex-shrink: 0;
   }
   .hero-couple .portrait img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: auto;
-    height: 100%;
-    transform: translate(-50%, -50%);
-    object-fit: cover;
-  }
-  .hero-couple .portrait.rotated img {
     width: 100%;
-    height: auto;
-    min-height: 100%;
-    transform: translate(-50%, -50%) rotate(90deg);
+    height: 100%;
+    object-fit: cover;
+    object-position: center 22%;
+    display: block;
   }
   .hero-couple .portrait .name-tag {
     position: absolute;
@@ -568,25 +560,14 @@
   }
   .couple .together {
     margin: 8px auto 28px;
-    max-width: 420px;
+    max-width: 460px;
     position: relative;
   }
-  .couple .together .photo-frame {
+  .couple .together img {
     width: 100%;
-    aspect-ratio: 3 / 4;
     border-radius: 22px;
-    overflow: hidden;
     box-shadow: 0 18px 50px rgba(0,0,0,0.18);
-    position: relative;
-  }
-  .couple .together .photo-frame img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 133%;
-    height: auto;
-    transform: translate(-50%, -50%) rotate(90deg);
-    transform-origin: center center;
+    display: block;
   }
   .couple .together::after {
     content: "♥";
@@ -609,8 +590,7 @@
     height: 130px;
     border-radius: 50%;
     object-fit: cover;
-    object-position: center center;
-    transform: rotate(90deg);
+    object-position: center 22%;
     border: 5px solid #fff;
     box-shadow: 0 8px 24px rgba(233,30,99,0.18);
   }
@@ -873,7 +853,7 @@
   </p>
 
   <div class="hero-couple">
-    <div class="portrait rotated">
+    <div class="portrait">
       <img src="./photo-a.jpg" alt="Monika">
       <span class="name-tag">Monika</span>
     </div>
@@ -911,9 +891,7 @@
     <span class="stamp">Moje milovaná Moniko,</span>
     <h3>tohle není plán. Tohle je slib.</h3>
     <div class="together">
-      <div class="photo-frame">
-        <img src="./photo-b.jpg" alt="My dva — naše nedávné dobrodružství" loading="lazy">
-      </div>
+      <img src="./photo-b.jpg" alt="My dva — naše nedávné dobrodružství" loading="lazy">
     </div>
     <div class="her">
       <img src="./photo-a.jpg" alt="Moje krásná Monika">
@@ -972,10 +950,10 @@
 <!-- FLIGHT PLAN -->
 <section>
   <h2>✈️ Letový plán</h2>
-  <p class="subtitle">Termín: <strong>Pá 20. 8. – St 8. 9. 2027</strong>. Konkrétní časy podle aktuálních letových řádů — finální čísla letů potvrdí cestovka při rezervaci.</p>
+  <p class="subtitle">Termín: <strong>Út 10. 8. – Ne 29. 8. 2027</strong> (20 dní). Časy a typy letadel podle aktuálních letových řádů Lufthansa, Hawaiian Airlines a American Airlines — finální čísla letů potvrdí cestovka při rezervaci.</p>
 
   <div class="flight-note" style="background:#E8F5E9; border-left-color:#16A085; color:#1B5E20;">
-    🌞 <strong>Proč srpen 2027 a ne červenec?</strong> Havajská sezóna je stabilní (26–28 °C celý rok), ale <strong>cenově je srpen citelně levnější</strong>. Červenec = US školní prázdniny + Asie peak = nejdražší + plno. Druhá polovina srpna = ceny hotelů klesnou o 15–25 % proti červenci, americké školy začínají kolem 20. 8. → méně rodin s dětmi. Hurricane sezóna v Pacifiku je sice od června do listopadu, ale Havaj zasáhne přímý hurricane <strong>průměrně jen jednou za 4–5 let</strong> (většina drah uhne na jih). <strong>Konec srpna = nejlepší poměr cena/zážitek/klid.</strong>
+    🌞 <strong>Proč začátek srpna 2027?</strong> Havajská sezóna je stabilní (26–28 °C celý rok). První polovina srpna nabízí <strong>nejlepší poměr cena/zážitek/počasí</strong> — americké školy stále v prázdninách (menší příliv až po 15. 8.), ale ceny už klesly z červencového peaku. Hurricane sezóna v Pacifiku je sice od června do listopadu, ale Havaj zasáhne přímý hurricane <strong>průměrně jen jednou za 4–5 let</strong>.
   </div>
 
   <table class="flight-table">
@@ -984,7 +962,7 @@
         <th>#</th>
         <th>Datum</th>
         <th>Trasa</th>
-        <th>Dopravce / spoj</th>
+        <th>Dopravce / spoj / letadlo</th>
         <th>Odlet → Přílet (LCL)</th>
         <th>Délka</th>
       </tr>
@@ -992,69 +970,93 @@
     <tbody>
       <tr>
         <td class="date">1</td>
-        <td class="date">Pá 20. 8. 2027</td>
-        <td class="route">PRG → FRA → LAX</td>
-        <td class="airline">Lufthansa<br>LH 1395 + LH 452</td>
-        <td class="time">06:45 PRG<br>→ 12:50 LAX</td>
-        <td><span class="duration">~14 h</span></td>
+        <td class="date">Út 10. 8. 2027</td>
+        <td class="route">PRG → FRA</td>
+        <td class="airline">Lufthansa LH 1395<br><span style="color:#1F4E78;font-weight:600;">Airbus A320neo</span> (180 míst, 2-3)</td>
+        <td class="time">06:45 PRG<br>→ 08:00 FRA</td>
+        <td><span class="duration">1 h 15 m</span></td>
+      </tr>
+      <tr>
+        <td class="date">1</td>
+        <td class="date">Út 10. 8. 2027</td>
+        <td class="route">FRA → LAX</td>
+        <td class="airline">Lufthansa LH 452<br><span style="color:#1F4E78;font-weight:600;">Boeing 747-8 Intercontinental</span> (364 míst, vč. Upper Deck)</td>
+        <td class="time">10:30 FRA<br>→ 13:25 LAX</td>
+        <td><span class="duration">11 h 55 m</span></td>
       </tr>
       <tr>
         <td class="date">2</td>
-        <td class="date">So 21. 8. 2027</td>
+        <td class="date">St 11. 8. 2027</td>
         <td class="route">LAX → HNL</td>
-        <td class="airline">Hawaiian Airlines<br>HA 1 (přímý)</td>
+        <td class="airline">Hawaiian Airlines HA 1<br><span style="color:#1F4E78;font-weight:600;">Airbus A330-200</span> (278 míst, přímý)</td>
         <td class="time">08:50 LAX<br>→ 11:55 HNL</td>
         <td><span class="duration">5 h 5 m</span></td>
       </tr>
       <tr>
-        <td class="date">3</td>
-        <td class="date">St 25. 8. 2027</td>
+        <td class="date">6</td>
+        <td class="date">Ne 15. 8. 2027</td>
         <td class="route">HNL → OGG (Maui)</td>
-        <td class="airline">Hawaiian Airlines<br>HA 289</td>
+        <td class="airline">Hawaiian Airlines HA 289<br><span style="color:#1F4E78;font-weight:600;">Boeing 717-200</span> (123 míst, mezi-ostrovní)</td>
         <td class="time">11:30 HNL<br>→ 12:11 OGG</td>
         <td><span class="duration">41 min</span></td>
       </tr>
       <tr>
-        <td class="date">4</td>
-        <td class="date">Ne 29. 8. 2027</td>
+        <td class="date">10</td>
+        <td class="date">Čt 19. 8. 2027</td>
         <td class="route">OGG → KOA (Big Island)</td>
-        <td class="airline">Hawaiian Airlines<br>HA 346</td>
+        <td class="airline">Hawaiian Airlines HA 346<br><span style="color:#1F4E78;font-weight:600;">Boeing 717-200</span></td>
         <td class="time">09:32 OGG<br>→ 10:18 KOA</td>
         <td><span class="duration">46 min</span></td>
       </tr>
       <tr>
-        <td class="date">5</td>
-        <td class="date">St 1. 9. 2027</td>
+        <td class="date">13</td>
+        <td class="date">Ne 22. 8. 2027</td>
         <td class="route">KOA → HNL → LIH (Kauai)</td>
-        <td class="airline">Hawaiian Airlines<br>HA 210 + HA 135</td>
+        <td class="airline">Hawaiian HA 210 + HA 135<br><span style="color:#1F4E78;font-weight:600;">2× Boeing 717-200</span></td>
         <td class="time">10:00 KOA<br>→ 12:46 LIH</td>
         <td><span class="duration">2 h 46 m</span></td>
       </tr>
       <tr>
-        <td class="date">6</td>
-        <td class="date">Ne 5. 9. 2027</td>
-        <td class="route">LIH → LAX → MIA</td>
-        <td class="airline">Hawaiian + American<br>HA 22 + AA 1244 (overnight)</td>
-        <td class="time">11:53 LIH<br>→ 06:54 +1 MIA</td>
-        <td><span class="duration">~16 h (vč. layoveru 3 h v LAX)</span></td>
+        <td class="date">17</td>
+        <td class="date">Čt 26. 8. 2027</td>
+        <td class="route">LIH → LAX</td>
+        <td class="airline">Hawaiian Airlines HA 22<br><span style="color:#1F4E78;font-weight:600;">Airbus A330-200</span></td>
+        <td class="time">11:53 LIH<br>→ 19:55 LAX</td>
+        <td><span class="duration">5 h 2 m</span></td>
       </tr>
       <tr>
-        <td class="date">7</td>
-        <td class="date">Út 7. 9. 2027</td>
-        <td class="route">MIA → FRA → PRG</td>
-        <td class="airline">Lufthansa<br>LH 463 + LH 1396 (overnight)</td>
-        <td class="time">17:35 MIA<br>→ 11:00 +2 PRG (St 8. 9.)</td>
-        <td><span class="duration">~17 h</span></td>
+        <td class="date">17</td>
+        <td class="date">Čt 26. 8. 2027</td>
+        <td class="route">LAX → MIA (overnight)</td>
+        <td class="airline">American Airlines AA 1244<br><span style="color:#1F4E78;font-weight:600;">Boeing 787-9 Dreamliner</span> (285 míst)</td>
+        <td class="time">23:15 LAX<br>→ 06:54 +1 MIA</td>
+        <td><span class="duration">4 h 39 m</span></td>
+      </tr>
+      <tr>
+        <td class="date">19</td>
+        <td class="date">So 28. 8. 2027</td>
+        <td class="route">MIA → FRA (overnight)</td>
+        <td class="airline">Lufthansa LH 463<br><span style="color:#1F4E78;font-weight:600;">Airbus A330-300</span> (236 míst)</td>
+        <td class="time">17:35 MIA<br>→ 09:25 +1 FRA</td>
+        <td><span class="duration">8 h 50 m</span></td>
+      </tr>
+      <tr>
+        <td class="date">20</td>
+        <td class="date">Ne 29. 8. 2027</td>
+        <td class="route">FRA → PRG</td>
+        <td class="airline">Lufthansa LH 1396<br><span style="color:#1F4E78;font-weight:600;">Airbus A320neo</span></td>
+        <td class="time">11:00 FRA<br>→ 12:15 PRG</td>
+        <td><span class="duration">1 h 15 m</span></td>
       </tr>
     </tbody>
   </table>
 
   <div class="flight-note">
-    💡 <strong>Tip k rezervaci:</strong> Long-haul lety (PRG→LAX a MIA→PRG) doporučuji koupit jako jeden <em>multi-city ticket</em> přes Lufthansa nebo Star Alliance partnera (zlevnění o 200–300 EUR oproti single-trip). Interní havajské hopy přes <strong>Hawaiian Airlines</strong> jako samostatný segment (~95 USD každý). Pacifický přejezd LIH→MIA stojí za to koupit s rozumným 3h layoverem v LAX, ne s minimálním transferem.
+    💡 <strong>Tip k rezervaci:</strong> Long-haul lety (PRG→LAX a MIA→PRG) doporučuji koupit jako jeden <em>multi-city ticket</em> přes Lufthansa nebo Star Alliance partnera (zlevnění o 200–300 EUR oproti single-trip). Interní havajské hopy přes <strong>Hawaiian Airlines</strong> jako samostatný segment (~95 USD každý). Pacifický přejezd LIH→LAX→MIA stojí za to koupit s rozumným 3h layoverem v LAX a nočním letem Dreamlinerem do Miami — ráno na pláži. 🌴
   </div>
 
   <div class="flight-note" style="background:#FFE7E7; border-left-color:#E74C3C; color:#7A2A2A; margin-top:10px;">
-    ⚠️ <strong>Pozor na časová pásma:</strong> mezi Havají a Miami je posun <strong>+6 h vpřed</strong>. Noční let LIH→LAX→MIA je nejtěžší úsek cesty — vyspat se v letadle pomůže, druhý den v Miami brát klidně.
+    ⚠️ <strong>Pozor na časová pásma:</strong> mezi Havají a Miami je posun <strong>+6 h vpřed</strong>. Noční let LIH→LAX→MIA je nejtěžší úsek cesty — Dreamliner má ale tišší kabinu a větší vlhkost, takže se v něm spí líp.
   </div>
 </section>
 
@@ -1320,26 +1322,26 @@
   <h2>📅 Den po dni</h2>
   <p class="subtitle">Zhuštěný itinerář (detail v přiloženém Excelu).</p>
   <div class="timeline">
-    <div class="day"><div class="h"><span class="num">Pá 20. 8.</span>Praha → Los Angeles</div><p>Ranní odlet PRG 06:45, přílet LAX 12:50. Santa Monica Pier, večeře u oceánu.</p></div>
-    <div class="day"><div class="h"><span class="num">So 21. 8.</span>LA → Honolulu</div><p>Ranní let LAX→HNL 08:50→11:55. Check-in Waikiki, aklimatizace, sunset mai tai.</p></div>
-    <div class="day"><div class="h"><span class="num">Ne 22. 8.</span>Oahu — historie</div><p>Diamond Head sunrise + Pearl Harbor + Waikiki Beach.</p></div>
-    <div class="day"><div class="h"><span class="num">Po 23. 8.</span>Oahu — North Shore</div><p>Road trip: Haleiwa, Laniakea (želvy), Dole Plantation, sunset Banzai.</p></div>
-    <div class="day"><div class="h"><span class="num">Út 24. 8.</span>Oahu — Kualoa &amp; snorkel</div><p>Hanauma Bay snorkel + Kualoa Ranch Jurský park tour.</p></div>
-    <div class="day"><div class="h"><span class="num">St 25. 8.</span>Oahu → Maui</div><p>Lanikai Beach, hop HNL→OGG 11:30, check-in Ka'anapali, Black Rock sunset.</p></div>
-    <div class="day"><div class="h"><span class="num">Čt 26. 8.</span>Maui — Road to Hana</div><p>Celodenní road trip — vodopády, černá pláž, bambusový les.</p></div>
-    <div class="day"><div class="h"><span class="num">Pá 27. 8.</span>Maui — Haleakala</div><p>Sunrise ve 3055 m (start 3 AM!), odpol. Wailea, večer Lahaina.</p></div>
-    <div class="day"><div class="h"><span class="num">So 28. 8.</span>Maui — Molokini &amp; Lu'au</div><p>Ranní katamarán Molokini snorkel, večer Old Lahaina Lu'au.</p></div>
-    <div class="day"><div class="h"><span class="num">Ne 29. 8.</span>Maui → Big Island</div><p>Hop OGG→KOA 09:32. Kona coffee farm, přejezd do Volcano Village.</p></div>
-    <div class="day"><div class="h"><span class="num">Po 30. 8.</span>Big Island — Volcanoes</div><p>Celý den NP: Kilauea Iki trek, lávové tunely, večerní záře.</p></div>
-    <div class="day"><div class="h"><span class="num">Út 31. 8.</span>Big Island — Mauna Kea</div><p>Černá + zelená pláž. Večer hvězdárna ve 4200 m + stargazing.</p></div>
-    <div class="day"><div class="h"><span class="num">St 1. 9.</span>Big Island → Kauai</div><p>Hapuna Beach, let KOA→HNL→LIH 10:00→12:46. Hanalei Bay sunset.</p></div>
-    <div class="day"><div class="h"><span class="num">Čt 2. 9.</span>Kauai — Na Pali Coast</div><p>Celodenní boat tour pod útesy — delfíni, jeskyně, vodopády.</p></div>
-    <div class="day"><div class="h"><span class="num">Pá 3. 9.</span>Kauai — Waimea Canyon</div><p>Kalalau Lookout, Pu'u Hinahina, sunset Polihale Beach.</p></div>
-    <div class="day"><div class="h"><span class="num">So 4. 9.</span>Kauai — Helikoptéra</div><p>Ranní heli tour celého ostrova, odpoledne Poipu Beach.</p></div>
-    <div class="day"><div class="h"><span class="num">Ne 5. 9.</span>Kauai → Miami</div><p>Spouting Horn, odpolední let LIH 11:53 → LAX → MIA 06:54 +1 (overnight).</p></div>
-    <div class="day"><div class="h"><span class="num">Po 6. 9.</span>Miami — South Beach</div><p>Příl. ráno. Ocean Drive, Lincoln Road, večer Little Havana.</p></div>
-    <div class="day"><div class="h"><span class="num">Út 7. 9.</span>Miami → Praha</div><p>Everglades airboat + Wynwood Walls. Večerní let MIA 17:35 → FRA → PRG.</p></div>
-    <div class="day"><div class="h"><span class="num">St 8. 9.</span>Návrat Praha ✅</div><p>Přílet PRG 11:00. Welcome home!</p></div>
+    <div class="day"><div class="h"><span class="num">Út 10. 8.</span>Praha → Los Angeles</div><p>Ranní odlet PRG 06:45 (A320neo), přesedání Frankfurt, dlouhý let na 747-8. Přílet LAX 13:25. Santa Monica Pier, večeře u oceánu.</p></div>
+    <div class="day"><div class="h"><span class="num">St 11. 8.</span>LA → Honolulu</div><p>Ranní let LAX→HNL 08:50→11:55 (A330-200). Check-in Waikiki, aklimatizace, sunset mai tai.</p></div>
+    <div class="day"><div class="h"><span class="num">Čt 12. 8.</span>Oahu — historie</div><p>Diamond Head sunrise + Pearl Harbor + Waikiki Beach.</p></div>
+    <div class="day"><div class="h"><span class="num">Pá 13. 8.</span>Oahu — North Shore</div><p>Road trip: Haleiwa, Laniakea (želvy), Dole Plantation, sunset Banzai.</p></div>
+    <div class="day"><div class="h"><span class="num">So 14. 8.</span>Oahu — Kualoa &amp; snorkel</div><p>Hanauma Bay snorkel + Kualoa Ranch Jurský park tour.</p></div>
+    <div class="day"><div class="h"><span class="num">Ne 15. 8.</span>Oahu → Maui</div><p>Lanikai Beach, hop HNL→OGG 11:30 (Boeing 717), check-in Ka'anapali, Black Rock sunset.</p></div>
+    <div class="day"><div class="h"><span class="num">Po 16. 8.</span>Maui — Road to Hana</div><p>Celodenní road trip — vodopády, černá pláž, bambusový les.</p></div>
+    <div class="day"><div class="h"><span class="num">Út 17. 8.</span>Maui — Haleakala</div><p>Sunrise ve 3055 m (start 3 AM!), odpol. Wailea, večer Lahaina.</p></div>
+    <div class="day"><div class="h"><span class="num">St 18. 8.</span>Maui — Molokini &amp; Lu'au</div><p>Ranní katamarán Molokini snorkel, večer Old Lahaina Lu'au.</p></div>
+    <div class="day"><div class="h"><span class="num">Čt 19. 8.</span>Maui → Big Island</div><p>Hop OGG→KOA 09:32 (Boeing 717). Kona coffee farm, přejezd do Volcano Village.</p></div>
+    <div class="day"><div class="h"><span class="num">Pá 20. 8.</span>Big Island — Volcanoes</div><p>Celý den NP: Kilauea Iki trek, lávové tunely, večerní záře.</p></div>
+    <div class="day"><div class="h"><span class="num">So 21. 8.</span>Big Island — Mauna Kea</div><p>Černá + zelená pláž. Večer hvězdárna ve 4200 m + stargazing.</p></div>
+    <div class="day"><div class="h"><span class="num">Ne 22. 8.</span>Big Island → Kauai</div><p>Hapuna Beach, let KOA→HNL→LIH 10:00→12:46 (2× Boeing 717). Hanalei Bay sunset.</p></div>
+    <div class="day"><div class="h"><span class="num">Po 23. 8.</span>Kauai — Na Pali Coast</div><p>Celodenní boat tour pod útesy — delfíni, jeskyně, vodopády.</p></div>
+    <div class="day"><div class="h"><span class="num">Út 24. 8.</span>Kauai — Waimea Canyon</div><p>Kalalau Lookout, Pu'u Hinahina, sunset Polihale Beach.</p></div>
+    <div class="day"><div class="h"><span class="num">St 25. 8.</span>Kauai — Helikoptéra</div><p>Ranní heli tour celého ostrova, odpoledne Poipu Beach.</p></div>
+    <div class="day"><div class="h"><span class="num">Čt 26. 8.</span>Kauai → Miami</div><p>Spouting Horn, dopolední let LIH 11:53 → LAX (A330), noční přelet LAX 23:15 → MIA 06:54 +1 (Dreamliner 787-9).</p></div>
+    <div class="day"><div class="h"><span class="num">Pá 27. 8.</span>Miami — South Beach</div><p>Příl. ráno. Ocean Drive, Lincoln Road, večer Little Havana.</p></div>
+    <div class="day"><div class="h"><span class="num">So 28. 8.</span>Miami → Frankfurt</div><p>Everglades airboat + Wynwood Walls. Večerní let MIA 17:35 → FRA (A330-300).</p></div>
+    <div class="day"><div class="h"><span class="num">Ne 29. 8.</span>Návrat Praha ✅</div><p>Ranní přelet FRA → PRG 11:00→12:15 (A320neo). Welcome home!</p></div>
   </div>
 </section>
 
@@ -1387,7 +1389,7 @@
 </section>
 
 <footer>
-  S láskou připraveno pro <strong>Moniku</strong> <span class="heart">♥</span> · 20. 8. – 8. 9. 2027 · čtyři ostrovy, jedna ona<br>
+  S láskou připraveno pro <strong>Moniku</strong> <span class="heart">♥</span> · 10. 8. – 29. 8. 2027 · čtyři ostrovy, jedna ona<br>
   <span style="opacity:.7">„Aloha" znamená lásku. Není to náhoda, že tam letíme spolu.</span>
 </footer>
 
@@ -1438,7 +1440,7 @@ document.querySelectorAll('[data-carousel]').forEach(carousel => {
 
 // Countdown to 20. 8. 2027 06:45 (departure)
 (function () {
-  const target = new Date('2027-08-20T06:45:00+02:00').getTime();
+  const target = new Date('2027-08-10T06:45:00+02:00').getTime();
   const el = document.getElementById('countdown');
   if (!el) return;
   const d = el.querySelector('[data-d]');
