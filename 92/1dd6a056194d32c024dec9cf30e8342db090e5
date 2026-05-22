@@ -1,0 +1,27 @@
+index.html
+  s_8c76ac6755dc1e::t_38b664542e6063 894
+  s_8c76ac6755dc1e::t_d663dde8cfc9c1 1325-1344
+  s_8c76ac6755dc1e::t_f0f565512d8d9b 563,566,570
+  s_8c76ac6755dc1e::t_a6cbeb968eb8cb 1392
+  s_8c76ac6755dc1e::t_0bdda35013f793 953,956,965,973-985,989,991,996-997,999,1004-1005,1007,1012-1013,1015,1020-1041,1044-1049,1055,1059
+  s_8c76ac6755dc1e::t_aa751fdb56438c 856
+  s_8c76ac6755dc1e::t_3756e964ea09a3 593
+  s_8c76ac6755dc1e::t_e8f96c5c2053d1 121,124-125
+  s_8c76ac6755dc1e::t_6441b292ac65d7 1443
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.0",
+  "base_commit_sha": "921dd6a056194d32c024dec9cf30e8342db090e5",
+  "prompts": {},
+  "sessions": {
+    "s_8c76ac6755dc1e": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_1b34f939fffea38JoDNI0CHQok",
+        "model": "claude-opus-4.7"
+      },
+      "human_author": "unknown"
+    }
+  }
+}
